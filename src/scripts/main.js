@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function(){
     const buttons = document.querySelectorAll('[data-tab-button]');
     const questions = document.querySelectorAll('[data-faq-question]')
     
-    const heroSection = document.querySelector('.hero');
-    const alturaHero = heroSection.clientHeight;
+    const heroSection = document.querySelector('.hero')
+    const alturaHero = heroSection.clientHeight
 
     window.addEventListener('scroll', function(){
         const posicaoAtual =  window.scrollY;
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function(){
         })
     }
 
-    //Seção FAQ, accordion
+    //Seção de FAQ, accordion
     for ( let i = 0; i < questions.length; i++){
         questions[i].addEventListener('click', abreOuFechaResposta);
     }
@@ -44,6 +44,14 @@ function exibeElementosDoHeader(){
     const header = document.querySelector('header')
     header.classList.remove('header--is-hidden')
 }
+
+function abreOuFechaResposta(elemtento) {
+    const classe = 'faq__questions__item--is-open';
+    const elemtentoPai = elemtento.target.parentNode;
+
+    elemtentoPai.classList.toggle(classe);
+} 
+
 
 function removeBotaoAtivo(){
     const buttons = document.querySelectorAll('[data-tab-button]');
